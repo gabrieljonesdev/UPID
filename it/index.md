@@ -14,6 +14,10 @@ link_text: "Scopri i miei progetti!"# Aggiungi qui il testo del link
 {% include hero.html %}
 
 <main class="container my-4" markdown="1">
+{% include chi-sono.html %}
+{% include documenti.html %}
+{% include trasparenza.html %}
+{% include documenti-in-evidenza.html %}
 
 </main>
 
