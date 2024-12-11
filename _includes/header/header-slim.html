@@ -13,10 +13,10 @@
                 </svg>
               </a>
               <div class="link-list-wrapper collapse" id="menu1">
-                <ul class="link-list">
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-                  <li class="d-lg-none"><a href="#">Ente appartenenza/Owner</a></li>
+                <ul class="link-list"><ul>
+                    {% for link in site.links %}
+                      <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                    {% endfor %}
                 </ul>
               </div>
             </nav>
