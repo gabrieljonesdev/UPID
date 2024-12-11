@@ -7,6 +7,8 @@ ref: homepage
 permalink: /
 order: 1
 image: "https://img.pikbest.com/backgrounds/20220119/children-education-blue-sky-and-grass_6243384.jpg!sw800"
+link_url: "https://www.esempio.com"  # Aggiungi qui l'URL del link
+link_text: "Limpio"         # Aggiungi qui il testo del link
 ---
 
 {% include hero.html %}
