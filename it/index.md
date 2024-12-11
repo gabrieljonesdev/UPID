@@ -6,7 +6,7 @@ lang: it
 ref: homepage
 permalink: /
 order: 1
-image: "https://picsum.photos/1920/960/?image=791"
+image: "https://img.pikbest.com/backgrounds/20220119/children-education-blue-sky-and-grass_6243384.jpg!sw800"
 ---
 
 {% include hero.html %}
