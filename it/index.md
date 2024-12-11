@@ -6,6 +6,7 @@ lang: it
 ref: homepage
 permalink: /
 order: 1
+image: "https://picsum.photos/1920/960/?image=791"
 ---
 
 {% include hero.html %}
