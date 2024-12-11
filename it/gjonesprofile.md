@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Persone pubbliche : Gabriel Jones!
+title: Gabriel Jones!
 description: Gabriel Jones, Onlygabbyme, Justgabbyme, JJ, condor and more!
 lang: it
 permalink: /gjones/
