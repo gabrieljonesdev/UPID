@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>{{ page.title }}</title>
+  {% include meta.html %}
+  {% include styles.html %}
+  {%- if jekyll.environment == 'production' -%}
+  {%- include analytics/google-analytics.html -%}
+  {%- endif -%}
+  <style>
+          body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      
+      .main-container {
+        display: flex;
+        margin: 20px;
+      }
+      
+      .sidebar {
+        width: 250px;
+        margin-right: 20px;
+      }
+      
+      .content {
+        flex: 1;
+      }
+      
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      
+      ul li {
+        margin: 10px 0;
+      }
+      
+      ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      
+      ul li a:hover {
+        text-decoration: underline;
+      }
+      
+      h2 {
+        color: #333;
+      }
+      
+      h3 {
+        color: #666;
+      }
+  </style>
+</head>
+<body>
+  {%- include header/header.html -%}
+  <div class="main-container">
+    <aside class="sidebar">
+      {{ content_for_sidebar }}
+    </aside>
+    <div class="content">
+      {{ content }}
+    </div>
+  </div>
+  {%- include footer/footer.html -%}
+  {%- include cookiebar.html -%}
+  {%- include scripts.html -%}
+</body>
+</html>
