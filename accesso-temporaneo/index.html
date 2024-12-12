@@ -73,9 +73,6 @@
     <form id="access-form">
       <label for="name">Inserisci il tuo nome*:</label>
       <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
-      
-      <label for="name">Codice utente (facoltativo):</label>
-        <input type="text" id="usercode" name="usercode" placeholder="A1B2C3D4-55>
 
       <label for="photo">URL della tua foto:</label>
       <input type="url" id="photo" name="photo" placeholder="https://example.com/tuafoto.jpg" required>
@@ -114,7 +111,7 @@
       setTimeout(() => {
         alert('Accesso completato! Ora verrai reindirizzato alla homepage.');
         window.location.href = '/UPID/?login-gj-kpis'; // Reindirizza alla homepage
-      }, 2000);
+      }, 0);
     });
   </script>
 </body>
