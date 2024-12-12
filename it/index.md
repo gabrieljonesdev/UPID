@@ -11,8 +11,6 @@ link_url: "/progetti/"# Aggiungi qui l'URL del link
 link_text: "Scopri i miei progetti!"# Aggiungi qui il testo del link
 ---
 
-{% include hero.html %}
-
 <main class="container my-4" markdown="1">
   <h1>Chi sono?</h1>
   <p>Hey yoo! Sono Gabriel e amo fare volontariato in biblioteca, in municipio mi occupo di politiche giovanili, mentre quando esco sono un animatore, l'animazione è la mia vita, amo stare a contatto con i bambini... Io a scuola faccio grafica e comunicazione, ma in ambito informatico, sono competente in : wordpress, jekyll, html, css, js, php, sql, media wiki, creazione di forum, hugo, sistemi windows, sistemi linux e in generale il web development!</p>
