@@ -1,0 +1,61 @@
+<!-- /accesso-temporaneo/index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesso Temporaneo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    img {
+      max-width: 100px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Accesso Temporaneo</h1>
+  <form id="access-form" class="form-container">
+    <label for="name">Inserisci il tuo nome:</label>
+    <input type="text" id="name" name="name" placeholder="Il tuo nome" required><br><br>
+
+    <label for="photo">Scegli una foto (URL):</label>
+    <input type="url" id="photo" name="photo" placeholder="URL della tua foto" required><br><br>
+
+    <button type="submit">Accedi</button>
+  </form>
+  <div id="preview" style="display:none;">
+    <h2>Anteprima:</h2>
+    <p id="preview-name"></p>
+    <img id="preview-photo" src="" alt="Preview Foto">
+  </div>
+
+  <script>
+    const form = document.getElementById('access-form');
+    const preview = document.getElementById('preview');
+    const previewName = document.getElementById('preview-name');
+    const previewPhoto = document.getElementById('preview-photo');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const photo = document.getElementById('photo').value;
+
+      // Salva nei dati temporanei (localStorage o sessionStorage)
+      sessionStorage.setItem('tempUser', JSON.stringify({ name, photo }));
+
+      // Mostra il messaggio di conferma
+      alert('Accesso completato! Ora verrai reindirizzato alla homepage.');
+      window.location.href = '/'; // Reindirizza alla home
+    });
+  </script>
+</body>
+</html>
