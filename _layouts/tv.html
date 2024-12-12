@@ -9,8 +9,35 @@
   {%- endif -%}
 </head>
 <body>
-  {%- include header/header.html -%}
-    <div class="featured-video" id="featuredVideoContainer"></div>
+    <header>
+        <div class="gabby-logo">
+            Gabby TV <span>🎥</span> <!-- Icona per rappresentare il video -->
+        </div>
+        <div>
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                const userData = localStorage.getItem('tempUser'); // Recupera i dati salvati
+                if (userData) {
+                  const { name, photo } = JSON.parse(userData);
+
+                  // Trova o aggiungi elementi all'header
+                  const header = document.querySelector('.it-header-center-content-wrapper');
+                  const userGreeting = document.createElement('div');
+                  userGreeting.style.display = 'flex';
+                  userGreeting.style.alignItems = 'center';
+                  userGreeting.style.gap = '10px';
+
+                  userGreeting.innerHTML = `
+                    <img src="${photo}" alt="Foto profilo" style="width: 60px; height: 60px; border-radius: 50%;">
+                    <span><h5><b>Ciao, ${name}</b></h5></span>
+                  `;
+                  header.appendChild(userGreeting);
+                }
+              });
+            </script>
+        </div>
+    </header>
+  <div class="featured-video" id="featuredVideoContainer"></div>
     <div class="video-selection" id="videoContainer"></div>
     
     <div class="video-popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
