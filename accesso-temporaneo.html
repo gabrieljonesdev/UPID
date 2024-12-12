@@ -40,17 +40,14 @@
 
   <script>
     const form = document.getElementById('access-form');
-    const preview = document.getElementById('preview');
-    const previewName = document.getElementById('preview-name');
-    const previewPhoto = document.getElementById('preview-photo');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('name').value;
       const photo = document.getElementById('photo').value;
 
-      // Salva nei dati temporanei (localStorage o sessionStorage)
-      sessionStorage.setItem('tempUser', JSON.stringify({ name, photo }));
+      // Salva i dati in localStorage
+      localStorage.setItem('tempUser', JSON.stringify({ name, photo }));
 
       // Mostra il messaggio di conferma
       alert('Accesso completato! Ora verrai reindirizzato alla homepage.');
