@@ -1,6 +1,7 @@
 ---
 layout: document
 title: "Politiche di Privacy e Trasparenza"
+permalink: /privacy/
 ---
 
 <div class="sidebar">
