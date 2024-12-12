@@ -21,6 +21,3 @@ link_text: "Scopri i miei progetti!"# Aggiungi qui il testo del link
   <p>La mia attività principale è l'animazione in oratorio e grest, anche se parallelamente, faccio anche il lettore di libri ai bambini piccoli, e sono un bibliotecario di alta qualità in biblioteca! Amo imparare i codici di collocamento della mia biblioteca, e amo la vita da bibliotecario!</p>
   <h1>Il mio lavoro!</h1>
   <p>Il mio lavoro principale è il developer di siti web! Con 4 anni di esprienza, ho maturato conoscenze elevate in ambito statico e non! Imparando a utilizzare sistemi come wordpress, media wiki, jekyll, hugo, netlify, github ecc... Che mi porto con me da 4 anni amando il continuo sviluppo e la creaione di sistemi informatici sempre più avanzati e complessi creati apposta per ogni ambito!</p></main>
-
-<h1>il mio mondo in breve</h1>
-![GabrielJones De (1)](https://github.com/user-attachments/assets/5af21724-8e57-48e2-9bf4-8dab47c718c3)
