@@ -1,0 +1,99 @@
+---
+layout: default
+---
+<style>
+  .main-container {
+  display: flex;
+  margin: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  margin-right: 20px;
+}
+
+.content {
+  flex: 1;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #666;
+}
+
+</style>
+<div class="main-container">
+    <aside class="sidebar">
+      {{ content_for_sidebar }}
+    </aside>
+
+<div class="sidebar">
+  <h3>Indice</h3>
+  <ul>
+    <li><a href="#sez1">Sez 1: Trattamento dei dati</a></li>
+    <li><a href="#sez2">Sez 2: Dichiarazione di Trasparenza di GJDEV</a></li>
+    <li><a href="#sez3">Sez 3: Normative per l’Account Politico</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <section id="sez1">
+    <h2>Sez 1: Trattamento dei dati</h2>
+    <p>In conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR) e le normative locali sulla privacy, desideriamo fornirti una panoramica trasparente...</p>
+    <h3>1. Titolari del trattamento</h3>
+    <p>I titolari del trattamento dei dati personali raccolti sui siti web che si appoggiano alle policy di GJDEV...</p>
+    <h3>2. Tipologie di dati trattati</h3>
+    <p>I dati personali raccolti sui nostri siti web comprendono una varietà di informazioni...</p>
+    <h3>3. Finalità del trattamento dei dati</h3>
+    <p>I dati personali raccolti sui nostri siti sono trattati per le seguenti finalità principali...</p>
+    <!-- Continua con il contenuto -->
+  </section>
+
+  <section id="sez2">
+    <h2>Sez 2: Dichiarazione di Trasparenza di GJDEV</h2>
+    <p>GJDEV è profondamente impegnato a garantire la trasparenza in ogni aspetto del trattamento dei dati personali...</p>
+    <h3>1. Impegno verso la trasparenza nei processi di trattamento</h3>
+    <p>In tutti i nostri progetti e piattaforme, siamo impegnati a rendere esplicite le modalità di trattamento dei dati personali...</p>
+    <h3>2. Gestione responsabile dei dati personali</h3>
+    <p>La gestione dei dati personali non si limita alla raccolta e all'uso, ma include anche la loro protezione...</p>
+    <h3>3. Facilità di accesso e gestione dei dati personali</h3>
+    <p>Offriamo agli utenti la possibilità di accedere ai propri dati personali...</p>
+    <!-- Continua con il contenuto -->
+  </section>
+
+  <section id="sez3">
+    <h2>Sez 3: Normative per l’Account Politico</h2>
+    <h3>1. Contenuti Pubblicati</h3>
+    <p>Finalità: Questo account è dedicato alla comunicazione di idee politiche, aggiornamenti su iniziative e campagne...</p>
+    <h3>2. Interazione con i Follower</h3>
+    <p>Dibattito e Discussione: L’account incoraggia il dibattito politico civile e costruttivo...</p>
+    <h3>3. Moderazione dei Commenti</h3>
+    <p>I commenti che violano le seguenti linee guida verranno rimossi o bloccati senza preavviso...</p>
+    <h3>4. Messaggi Diretti (DM)</h3>
+    <p>Comunicazioni Personali: Accogliamo messaggi diretti pertinenti e costruttivi...</p>
+    <h3>5. Rispetto della Privacy</h3>
+    <p>Protezione dei Dati: Non raccoglieremo né condivideremo informazioni personali dei nostri follower...</p>
+    <!-- Continua con il contenuto -->
+  </section>
+</div>
