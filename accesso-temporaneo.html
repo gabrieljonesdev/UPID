@@ -1,4 +1,3 @@
-<!-- /accesso-temporaneo/index.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,50 +7,111 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0073e6, #00aaff);
+      color: #fff;
     }
     .form-container {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
       max-width: 400px;
-      margin: 0 auto;
     }
-    img {
+    .form-container h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .form-container button {
+      background: #0073e6;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form-container button:hover {
+      background: #005bb5;
+    }
+    .form-container img {
       max-width: 100px;
       border-radius: 50%;
+      margin-top: 1rem;
+    }
+    .preview {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #0073e6;
     }
   </style>
 </head>
 <body>
-  <h1>Accesso Temporaneo</h1>
-  <form id="access-form" class="form-container">
-    <label for="name">Inserisci il tuo nome:</label>
-    <input type="text" id="name" name="name" placeholder="Il tuo nome" required><br><br>
+  <div class="form-container">
+    <h1>Accesso Temporaneo</h1>
+    <form id="access-form">
+      <label for="name">Inserisci il tuo nome:</label>
+      <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
 
-    <label for="photo">Scegli una foto (URL):</label>
-    <input type="url" id="photo" name="photo" placeholder="URL della tua foto" required><br><br>
+      <label for="photo">URL della tua foto:</label>
+      <input type="url" id="photo" name="photo" placeholder="https://example.com/tuafoto.jpg" required>
 
-    <button type="submit">Accedi</button>
-  </form>
-  <div id="preview" style="display:none;">
-    <h2>Anteprima:</h2>
-    <p id="preview-name"></p>
-    <img id="preview-photo" src="" alt="Preview Foto">
+      <button type="submit">Accedi</button>
+    </form>
+
+    <div id="preview" class="preview" style="display: none;">
+      <p>Anteprima:</p>
+      <img id="preview-photo" src="" alt="Preview Foto">
+      <p id="preview-name"></p>
+    </div>
   </div>
 
   <script>
     const form = document.getElementById('access-form');
+    const preview = document.getElementById('preview');
+    const previewName = document.getElementById('preview-name');
+    const previewPhoto = document.getElementById('preview-photo');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
       const name = document.getElementById('name').value;
       const photo = document.getElementById('photo').value;
 
       // Salva i dati in localStorage
       localStorage.setItem('tempUser', JSON.stringify({ name, photo }));
 
-      // Mostra il messaggio di conferma
-      alert('Accesso completato! Ora verrai reindirizzato alla homepage.');
-      window.location.href = '/'; // Reindirizza alla home
+      // Mostra l'anteprima
+      preview.style.display = 'block';
+      previewName.textContent = `Ciao, ${name}`;
+      previewPhoto.src = photo;
+
+      // Messaggio di conferma
+      setTimeout(() => {
+        alert('Accesso completato! Ora verrai reindirizzato alla homepage.');
+        window.location.href = '/UPID/?login-gj-kpis'; // Reindirizza alla homepage
+      }, 2000);
     });
   </script>
 </body>
