@@ -21,7 +21,28 @@ tutte le pagine del sito che:
                 </div>
               </a>
             </div>
-            </div>
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                const userData = localStorage.getItem('tempUser'); // Recupera i dati salvati
+                if (userData) {
+                  const { name, photo } = JSON.parse(userData);
+
+                  // Trova o aggiungi elementi all'header
+                  const header = document.querySelector('.it-header-center-content-wrapper');
+                  const userGreeting = document.createElement('div');
+                  userGreeting.style.display = 'flex';
+                  userGreeting.style.alignItems = 'center';
+                  userGreeting.style.gap = '10px';
+
+                  userGreeting.innerHTML = `
+                    <span>Ciao, ${name}</span>
+                    <img src="${photo}" alt="Foto profilo" style="width: 40px; height: 40px; border-radius: 50%;">
+                  `;
+                  header.appendChild(userGreeting);
+                }
+              });
+            </script>
+          </div>
         </div>
       </div>
     </div>
