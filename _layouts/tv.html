@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+  <link rel="stylesheet" href="https://GabrielJonesORG.github.io/assets/onlygabbyme-it/style.css">
+  {% include meta.html %}
+  {% include styles.html %}
+  {%- if jekyll.environment == 'production' -%}
+  {%- include analytics/google-analytics.html -%}
+  {%- endif -%}
+</head>
+<body>
+  {%- include header/header.html -%}
+    <div class="featured-video" id="featuredVideoContainer"></div>
+    <div class="video-selection" id="videoContainer"></div>
+    
+    <div class="video-popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+    <div class="video-popup" id="videoPopup">
+        <iframe id="popupVideo" src="" allowfullscreen></iframe>
+    </div>
+  {%- include footer/footer.html -%}
+  {%- include cookiebar.html -%}
+  {%- include scripts.html -%}
+
+    <script>
+        const API_KEY = 'AIzaSyDmtuEqJYNjXgJ-xO0UEZcJf0UXHmKjB4o'; // Chiave API aggiornata
+        const CHANNEL_ID = 'UCpw7_ePKCUF28v1JypU0RNw'; // ID del canale
+
+        async function fetchVideos() {
+            try {
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`);
+                const data = await response.json();
+                console.log(data); // Debug: vedere la struttura dei dati
+                return data.items;
+            } catch (error) {
+                console.error("Errore durante il fetch dei video:", error);
+                return [];
+            }
+        }
+
+        function createFeaturedVideoElement(videoId) {
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'featured-video';
+
+            videoDiv.innerHTML = `
+                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+            `;
+
+            return videoDiv;
+        }
+
+        function createVideoElement(video) {
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'video';
+
+            const videoId = video.id.videoId;
+            videoDiv.innerHTML = `
+                <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
+                <p>${video.snippet.title}</p>
+            `;
+            videoDiv.addEventListener('click', () => openPopup(videoId));
+
+            return videoDiv;
+        }
+
+        function openPopup(videoId) {
+            const popupOverlay = document.getElementById('popupOverlay');
+            const videoPopup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+
+            popupVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Avvia automaticamente
+            popupOverlay.style.display = 'block';
+            videoPopup.style.display = 'block';
+        }
+
+        function closePopup() {
+            const popupOverlay = document.getElementById('popupOverlay');
+            const videoPopup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+
+            popupVideo.src = ''; // Ferma il video
+            popupOverlay.style.display = 'none';
+            videoPopup.style.display = 'none';
+        }
+
+        async function displayVideos() {
+            const videos = await fetchVideos();
+            const featuredVideoContainer = document.getElementById('featuredVideoContainer');
+            const videoContainer = document.getElementById('videoContainer');
+
+            if (videos && videos.length > 0) {
+                // Mostra il primo video in evidenza
+                const featuredVideoElement = createFeaturedVideoElement(videos[0].id.videoId);
+                featuredVideoContainer.appendChild(featuredVideoElement);
+
+                // Mostra gli altri video
+                videos.slice(1).forEach(video => {
+                    const videoElement = createVideoElement(video);
+                    videoContainer.appendChild(videoElement);
+                });
+            }
+        }
+
+        displayVideos();
+    </script>
+
+    <script>
+        if (window.innerWidth <= 768) {
+            window.location.href = "index-p.html"; // Reindirizza alla pagina /index-p.html
+        }
+
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PV5ZEXR594"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PV5ZEXR594');
+    </script>
+</body>
+</html>
